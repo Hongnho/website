@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThS. Lê Thị Hồng Nhớ - Chuyên gia Thú y</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3d7ab5 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: #2d5a87;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #2d5a87;
+        }
+        .timeline-line {
+            border-left: 3px solid #2d5a87;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        .avatar-ring {
+            background: linear-gradient(135deg, #ffd700, #ff8c00, #ffd700);
+            padding: 5px;
+            border-radius: 50%;
+        }
+        .publication-card {
+            border-left: 4px solid #2d5a87;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="scroll-smooth bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#home" class="font-heading text-xl font-bold text-blue-900">ThS. Lê Thị Hồng Nhớ</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Trang chủ</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Giới thiệu</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Học vấn</a>
+                    <a href="#publications" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Công bố</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Đề tài</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-900 font-medium">Liên hệ</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-blue-900 font-medium">Trang chủ</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-900 font-medium">Giới thiệu</a>
+                <a href="#education" class="block text-gray-700 hover:text-blue-900 font-medium">Học vấn</a>
+                <a href="#publications" class="block text-gray-700 hover:text-blue-900 font-medium">Công bố</a>
+                <a href="#projects" class="block text-gray-700 hover:text-blue-900 font-medium">Đề tài</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-900 font-medium">Liên hệ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-yellow-300 font-medium mb-3 tracking-wider uppercase">Chuyên gia Thú y & Nghiên cứu sinh</p>
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                        Lê Thị Hồng Nhớ
+                    </h1>
+                    <p class="text-blue-100 text-lg md:text-xl mb-4">
+                        <i class="fas fa-user-graduate mr-2"></i>Thạc sĩ Chăn nuôi • Bác sĩ Thú y
+                    </p>
+                    <p class="text-blue-100 text-lg mb-8">
+                        <i class="fas fa-building mr-2"></i>Phụ trách Phòng Dịch tễ Thú y<br>
+                        Chi cục Chăn nuôi và Thú y tỉnh Đồng Tháp
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#contact" class="bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-envelope mr-2"></i>Liên hệ
+                        </a>
+                        <a href="#publications" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                            <i class="fas fa-book mr-2"></i>Công bố khoa học
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="avatar-ring">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center overflow-hidden shadow-2xl">
+                            <div class="text-center">
+                                <i class="fas fa-user text-6xl md:text-7xl text-blue-900 mb-3"></i>
+                                <p class="text-blue-900 font-semibold text-sm">Ảnh đại diện</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">12+</div>
+                    <div class="text-blue-100">Năm kinh nghiệm</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">7</div>
+                    <div class="text-blue-100">Bài báo khoa học</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">6</div>
+                    <div class="text-blue-100">Đề tài nghiên cứu</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">4</div>
+                    <div class="text-blue-100">Bằng cấp đại học</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-900 mb-4">Giới thiệu bản thân</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-blue-900 mb-6">
+                        <i class="fas fa-info-circle text-yellow-500 mr-3"></i>Thông tin cá nhân
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-user text-blue-600 w-8"></i>
+                            <div class="ml-4">
+                                <p class="text-gray-500 text-sm">Họ và tên</p>
+                                <p class="font-semibold text-gray-800">Lê Thị Hồng Nhớ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-birthday-cake text-blue-600 w-8"></i>
+                            <div class="ml-4">
+                                <p class="text-gray-500 text-sm">Ngày sinh</p>
+                                <p class="font-semibold text-gray-800">01/01/1984</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-phone text-blue-600 w-8"></i>
+                            <div class="ml-4">
+                                <p class="text-gray-500 text-sm">Điện thoại cá nhân</p>
+                                <p class="font-semibold text-gray-800">0919 319 771</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-envelope text-blue-600 w-8"></i>
+                            <div class="ml-4">
+                                <p class="text-gray-500 text-sm">Email</p>
+                                <p class="font-semibold text-gray-800">hongnhoty28@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-blue-900 mb-6">
+                        <i class="fas fa-briefcase text-yellow-500 mr-3"></i>Vị trí công tác
+                    </h3>
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-building text-white text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold text-blue-900">Chi cục Chăn nuôi và Thú y</p>
+                                <p class="text-blue-700">Tỉnh Đồng Tháp</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-700">
+                            <p><i class="fas fa-user-tie text-blue-600 w-6"></i><strong>Chức vụ:</strong> Phụ trách Phòng Dịch tễ Thú y</p>
+                            <p><i class="fas fa-calendar text-blue-600 w-6"></i><strong>Thời gian công tác:</strong> Từ tháng 09/2013</p>
+                            <p><i class="fas fa-map-marker-alt text-blue-600 w-6"></i><strong>Địa chỉ:</strong> Khu phố Trung Lương, phường Trung An, tỉnh Đồng Tháp</p>
+                            <p><i class="fas fa-phone-office text-blue-600 w-6"></i><strong>Điện thoại:</strong> 0273 387 1410</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-semibold text-blue-900 mb-3"><i class="fas fa-tasks text-yellow-500 mr-2"></i>Nhiệm vụ chính:</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Tham mưu xây dựng chính sách trong lĩnh vực thú y</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Triển khai công tác phòng chống dịch bệnh động vật</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Tư vấn về xử lý các ổ dịch bệnh động vật</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Tham gia các nghiên cứu khoa học</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-900 mb-4">Học vị & Đào tạo</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="relative">
+                <div class="timeline-line ml-2 md:ml-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:h-full"></div>
+                <div class="space-y-8">
+                    <!-- PhD -->
+                    <div class="relative flex flex-col md:flex-row md:justify-between md:items-center">
+                        <div class="md:w-5/12 md:text-right md:pr-12">
+                            <div class="card-hover bg-white rounded-xl p-6 shadow-lg ml-8 md:ml-0">
+                                <span class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">Đang theo học</span>
+                                <h3 class="font-bold text-blue-900 text-lg">Nghiên cứu sinh Tiến sĩ</h3>
+                                <p class="text-gray-600">Khoa Thú y, Trường Nông nghiệp</p>
+                                <p class="text-blue-600 font-semibold">Trường Đại học Cần Thơ</p>
+                                <p class="text-gray-500 text-sm mt-2"><i class="fas fa-clock mr-1"></i>Hiện tại</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex w-2/12 justify-center">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <i class="fas fa-graduation-cap text-white"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    <!-- Law -->
+                    <div class="relative flex flex-col md:flex-row md:justify-between md:items-center">
+                        <div class="md:w-5/12"></div>
+                        <div class="hidden md:flex w-2/12 justify-center">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <i class="fas fa-balance-scale text-white"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12 md:pl-12">
+                            <div class="card-hover bg-white rounded-xl p-6 shadow-lg ml-8 md:ml-0">
+                                <span class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">2021</span>
+                                <h3 class="font-bold text-blue-900 text-lg">Cử nhân Luật</h3>
+                                <p class="text-blue-600 font-semibold">Trường Đại học Cần Thơ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- English -->
+                    <div class="relative flex flex-col md:flex-row md:justify-between md:items-center">
+                        <div class="md:w-5/12 md:text-right md:pr-12">
+                            <div class="card-hover bg-white rounded-xl p-6 shadow-lg ml-8 md:ml-0">
+                                <span class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">2019</span>
+                                <h3 class="font-bold text-blue-900 text-lg">Cử nhân Ngôn ngữ Anh</h3>
+                                <p class="text-blue-600 font-semibold">Trường Đại học Cần Thơ</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex w-2/12 justify-center">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <i class="fas fa-language text-white"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    <!-- Master -->
+                    <div class="relative flex flex-col md:flex-row md:justify-between md:items-center">
+                        <div class="md:w-5/12"></div>
+                        <div class="hidden md:flex w-2/12 justify-center">
+                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <i class="fas fa-award text-white"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12 md:pl-12">
+                            <div class="card-hover bg-white rounded-xl p-6 shadow-lg ml-8 md:ml-0">
+                                <span class="inline-block bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">2009</span>
+                                <h3 class="font-bold text-blue-900 text-lg">Thạc sĩ Chăn nuôi</h3>
+                                <p class="text-blue-600 font-semibold">Trường Đại học Nông Lâm TP. HCM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DVM -->
+                    <div class="relative flex flex-col md:flex-row md:justify-between md:items-center">
+                        <div class="md:w-5/12 md:text-right md:pr-12">
+                            <div class="card-hover bg-white rounded-xl p-6 shadow-lg ml-8 md:ml-0">
+                                <span class="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">2007</span>
+                                <h3 class="font-bold text-blue-900 text-lg">Bác sĩ Thú y</h3>
+                                <p class="text-blue-600 font-semibold">Trường Đại học Nông Lâm TP. HCM</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex w-2/12 justify-center">
+                            <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <i class="fas fa-stethoscope text-white"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-900 mb-4">Bài báo & Công bố khoa học</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
+                <p class="text-gray-600">Danh sách các công trình nghiên cứu đã công bố</p>
+            </div>
+            <div class="space-y-6">
+                <!-- Publication 1 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-start justify-between flex-wrap gap-4">
+                        <div class="flex-1">
+                            <span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2025</span>
+                            <h3 class="font-bold text-blue-900 text-lg mb-2">Đặc điểm di truyền của các chủng virus dịch tả heo châu Phi (gen p30) lưu hành tại tỉnh Tiền Giang</h3>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i><strong>Lê Thị Hồng Nhớ</strong>, Lê Vĩnh Nguyên Hân, Từ Phương Bình, Lê Phương Thảo, Bùi Thị Tuyết Trinh, Thái Quốc Hiếu</p>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-star mr-1"></i>Tác giả chính</span>
+                    </div>
+                </div>
+                <!-- Publication 2 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex-1">
+                        <span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2025</span>
+                        <h3 class="font-bold text-blue-900 text-lg mb-2">Đánh giá đặc điểm dịch tễ và phân tích yếu tố đa biến liên quan bệnh dịch tả heo châu Phi tại tỉnh Tiền Giang</h3>
+                        <p class="text-gray-500 text-sm italic mb-2">Epidemiological characteristics and multivariable risk factor analysis associating African swine fever in Tien Giang province</p>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Thái Quốc Hiếu, Lê Vĩnh Nguyên Hân, Từ Phương Bình, Lê Phương Thảo, Bùi Thị Tuyết Trinh, <strong>Lê Thị Hồng Nhớ</strong></p>
+                    </div>
+                </div>
+                <!-- Publication 3 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex-1">
+                        <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2023</span>
+                        <h3 class="font-bold text-blue-900 text-lg mb-2">PCR vi giọt kỹ thuật số: tiềm năng xét nghiệm nhạy cảm cao và chính xác bệnh dịch tả heo châu Phi</h3>
+                        <p class="text-gray-500 text-sm italic mb-2">Droplet digital PCR technique: Potential of high sensitivity and accuracy in detecting African swine fever virus</p>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Đỗ Tiến Duy, Nguyễn Lê Đình Phương, Ngô Thị Ngọc Trâm, Bùi Minh Thuy, Mai Chí Nghĩa, <strong>Lê Thị Hồng Nhớ</strong>, và cộng sự</p>
+                    </div>
+                </div>
+                <!-- Publication 4 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex-1">
+                        <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2023</span>
+                        <h3 class="font-bold text-blue-900 text-lg mb-2">Năng suất trứng của cút Nhật Bản với các nhóm màu lông, kiểu chuồng nuôi và tần số kiểu gen prolactin indel</h3>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Thái Quốc Hiếu, Lê Vĩnh Nguyên Hân, Từ Phương Bình, Bùi Thị Tuyết Trinh, Trần Hoàng Diệp, Đoàn Thị Ngọc Thanh, <strong>Lê Thị Hồng Nhớ</strong>, Lê Phương Thảo, Nguyễn Trọng Ngữ</p>
+                    </div>
+                </div>
+                <!-- Publication 5 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-start justify-between flex-wrap gap-4">
+                        <div class="flex-1">
+                            <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2022</span>
+                            <span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-3 ml-2">Review Article</span>
+                            <h3 class="font-bold text-blue-900 text-lg mb-2">Facing the challenges of endemic African Swine Fever in Vietnam</h3>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Danh Cong Lai, <strong>Hong Nho Thi Le</strong>, Bui Thi To Nga, Duy Tien Do</p>
+                        </div>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-globe mr-1"></i>Quốc tế</span>
+                    </div>
+                </div>
+                <!-- Publication 6 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex-1">
+                        <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2022</span>
+                        <h3 class="font-bold text-blue-900 text-lg mb-2">Đặc điểm lây nhiễm của virus dịch tả heo châu Phi genotype II ở các ổ dịch</h3>
+                        <p class="text-gray-500 text-sm italic mb-2">Infection characteristics of African swine fever virus genotype II in the field outbreaks</p>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Lại Công Danh, Đỗ Tiến Duy, Nguyễn Minh Nam, Nguyễn Chế Thanh, Trần Hoàng Vũ, <strong>Lê Thị Hồng Nhớ</strong>, Nguyễn Thị Mỹ Duyên, Nguyễn Tất Toàn</p>
+                    </div>
+                </div>
+                <!-- Publication 7 -->
+                <div class="publication-card card-hover bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex-1">
+                        <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-3">2020</span>
+                        <h3 class="font-bold text-blue-900 text-lg mb-2">Nghiên cứu sự thích nghi của vịt biển 15 - Đại Xuyên với các mức độ mặn trong nước uống tại huyện Tân Phú Đông, tỉnh Tiền Giang</h3>
+                        <p class="text-gray-500 text-sm italic mb-2">Study on adaptability of marine duck named 15-Dai Xuyen with drinking water having different salinity levels in Tan Phu Dong district, Tien Giang province</p>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-users mr-2"></i>Trần Tiến Lên, Thái Quốc Hiếu, <strong>Lê Thị Hồng Nhớ</strong>, Lê Phương Thảo, Lê Vĩnh Nguyên Hân, Phạm Văn Vang, Trần Văn Chính, Trần Thị Dân, Nguyễn Ngọc Tuân</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-900 mb-4">Đề tài & Dự án nghiên cứu</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
+                <p class="text-gray-600">Các đề tài khoa học và công nghệ đã và đang tham gia</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2014 - 2017</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-check-circle mr-1"></i>Đã nghiệm thu</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Nghiên cứu chọn lọc, phục tráng, cải tạo giống cút và hướng dẫn chăn nuôi an toàn sinh học</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-flask mr-2"></i>
+                        <span>Nghiên cứu ứng dụng</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2015 - 2017</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-check-circle mr-1"></i>Đã nghiệm thu</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Khảo sát tính kháng gây ô nhiễm môi trường, phát tán vi khuẩn đề kháng đối với kháng sinh từ chất thải của các cơ sở chăn nuôi heo quy mô vừa và nhỏ tại Tiền Giang và đề xuất giải pháp khắc phục</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-flask mr-2"></i>
+                        <span>Nghiên cứu môi trường</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2017 - 2019</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-check-circle mr-1"></i>Đã nghiệm thu</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Khảo sát, đánh giá sự thích nghi và hiệu quả chăn nuôi vịt biển tại huyện Tân Phú Đông, tỉnh Tiền Giang</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-flask mr-2"></i>
+                        <span>Nghiên cứu chăn nuôi</span>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2020 - 2022</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-check-circle mr-1"></i>Đã nghiệm thu</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Ứng dụng công nghệ trong tuyển chọn dòng cút có năng suất sinh sản cao, bảo quản trứng và xử lý phân chim cút tại tỉnh Tiền Giang</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-flask mr-2"></i>
+                        <span>Nghiên cứu ứng dụng công nghệ</span>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2021 - 2024</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-check-circle mr-1"></i>Đã nghiệm thu</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Nghiên cứu các giải pháp công nghệ để nâng cao chất lượng đàn bò thịt trên địa bàn tỉnh Tiền Giang</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-flask mr-2"></i>
+                        <span>Nghiên cứu chăn nuôi</span>
+                    </div>
+                </div>
+                <!-- Project 6 - In Progress -->
+                <div class="card-hover bg-white rounded-xl p-6 shadow-lg border-t-4 border-orange-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">2024 - 2026</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-spinner fa-spin mr-1"></i>Đang thực hiện</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-3">Nghiên cứu xây dựng phần mềm đánh giá mức độ an toàn sinh học trong phòng chống bệnh dịch tả lợn Châu Phi trên địa bàn tỉnh Tiền Giang</h3>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-laptop-code mr-2"></i>
+                        <span>Nghiên cứu công nghệ thông tin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Liên hệ</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
+                <p class="text-blue-100">Kết nối và trao đổi thông tin</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="tel:0919319771" class="card-hover bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Điện thoại cá nhân</h3>
+                    <p class="text-blue-100">0919 319 771</p>
+                </a>
+                <a href="mailto:hongnhoty28@gmail.com" class="card-hover bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Email</h3>
+                    <p class="text-blue-100">hongnhoty28@gmail.com</p>
+                </a>
+                <a href="tel:02733871410" class="card-hover bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Điện thoại cơ quan</h3>
+                    <p class="text-blue-100">0273 387 1410</p>
+                </a>
+                <div class="card-hover bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-2">Địa chỉ</h3>
+                    <p class="text-blue-100 text-sm">Khu phố Trung Lương, phường Trung An, tỉnh Đồng Tháp</p>
+                </div>
+            </div>
+            <!-- Contact Form -->
+            <div class="mt-12 max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                    <h3 class="font-heading text-2xl font-bold text-blue-900 mb-6 text-center">Gửi tin nhắn</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Họ và tên</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Nhập họ và tên">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Nhập email">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Chủ đề</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Nhập chủ đề">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Nội dung</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none" placeholder="Nhập nội dung tin nhắn"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-paper-plane mr-2"></i>Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="font-heading text-xl font-bold">ThS. Lê Thị Hồng Nhớ</p>
+                    <p class="text-gray-400 text-sm">Chuyên gia Thú y & Nghiên cứu sinh</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="mailto:hongnhoty28@gmail.com" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:0919319771" class="w-10 h-10 bg-gray-700 hover:bg-green-600 rounded-full flex items-center justify-center transition-all">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center">
+                <p class="text-gray-400 text-sm">© 2024 Lê Thị Hồng Nhớ. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hidden items-center justify-center transition-all duration-300 z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('hidden');
+                backToTop.classList.add('flex');
+            } else {
+                backToTop.classList.add('hidden');
+                backToTop.classList.remove('flex');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.');
+            this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover, .publication-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
